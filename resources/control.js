@@ -7,11 +7,11 @@ playable_ani.prototype.execute = function () {
 	now_run = this;
 	this.can_run = true;
 	this.run_at = 0;
-	try{
+	/*try{
 		parent.location.assign("#main_show");
 	}catch(ex){
 		
-	}
+	}*/
 	this.program = setInterval( (function(self) {
          return function() {
 			//alert(self.cmd.length);
@@ -59,11 +59,12 @@ playable_ani.prototype.output = function () {
 	}catch(ex){
 		
 	}
+	/*
 	try{
 		parent.location.assign("#the_gif");
 	}catch(ex){
 		
-	}
+	}*/
 	this.program = setInterval( (function(self) {
          return function() {
 			//alert(self.cmd.length);

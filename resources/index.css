@@ -1,0 +1,58 @@
+			.dolink { 	
+				text-decoration: none; color: white;
+			}
+			.glue {
+				position: fixed;
+				bottom: 0px;
+				left: 0px;
+			}
+			.floated { 
+				float: left; 
+				margin-left: 0px;
+				margin-right:-5px;
+				width: 50%;
+			}
+			section { 
+				border: 0px; 
+			}
+			body { 
+				font-family: arial, sans-serif ;
+				background-color: #E8F7F2;
+			}
+			di_line {
+				clear: both; 
+				height: 0; 
+				margin: 0; 
+				padding: 0;
+			}
+			nav { 
+				font-weight: bold;
+				color: white;
+				text-align: center;
+				width: 50%;
+				background-color: none; 
+			}
+			nav ul	{ 
+				display: none;
+				list-style: none;
+				margin: 0;
+				padding: 0; 
+			}
+			nav:hover ul	{ 
+				display: block; 
+			}
+			nav ul li	{ 
+				border: 2px solid #0697D6;
+				border-top: 2px solid #0697D6;
+				background-color: white;
+				width: 100%;
+				color: black; 
+			}
+			nav ul li:hover { 
+				border: 2px solid #0697D6;
+				background-color: PowderBlue; 
+			}
+			#aside {
+				width: 25%;
+				height: 100%;
+			}

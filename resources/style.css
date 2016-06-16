@@ -1,0 +1,18 @@
+table {
+	border-collapse: collapse;
+	font-family: Courier;
+}
+table, td, th {
+	border: 1px solid black;
+	padding: 4px;
+}
+th {
+	text-align: left;
+	background-color: lightblue;
+}
+td {
+	text-align: left;
+}
+svg {
+	background-color: #ffffff;
+}

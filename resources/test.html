@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Example</title>
+  <style>
+    body {
+      height: 3000px;
+    }
+    .dot {
+      width: 2px;
+      height: 2px;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+<a href="javascript:to_color('red')">red</a>, 
+<a href="javascript:to_color('black')">black</a>, 
+<a href="javascript:to_color_input()">other</a>, 
+<a href="javascript:will_be_draw()">push</a>, 
+<a href="javascript:clear_img()">clear</a>,
+<input id="color_str" size="20" value="#00ffff"/>
+<div id="drawing" width="100%" height="100%"></div>
+<script>
+	var is_drawing = false;
+	var now_color = "black";
+	function to_color(color){
+		now_color = color;
+	}
+	function to_color_input(){
+		now_color = document.getElementById("color_str").value;
+	}
+	document.onmousedown = handleMouseDown;
+	document.onmouseup = handleMouseUp;
+	function handleMouseDown(event) {
+		if(event.button == 0){
+			is_drawing = true;
+		}
+	}
+	function clear_img(){
+		var s = document.getElementById("drawing");
+		s.innerHTML = "";
+	}
+	function handleMouseUp(event) {
+		is_drawing = false;
+	}
+	function will_be_draw() {
+		is_drawing = true;
+	}
+    document.onmousemove = handleMouseMove;
+    function handleMouseMove(event) {
+      var dot, eventDoc, doc, body, pageX, pageY;
+      
+      event = event || window.event; 
+	  
+      if (event.pageX == null && event.clientX != null) {
+        eventDoc = (event.target && event.target.ownerDocument) || document;
+        doc = eventDoc.documentElement;
+        body = eventDoc.body;
+
+        event.pageX = event.clientX +
+          (doc && doc.scrollLeft || body && body.scrollLeft || 0) -
+          (doc && doc.clientLeft || body && body.clientLeft || 0);
+        event.pageY = event.clientY +
+          (doc && doc.scrollTop  || body && body.scrollTop  || 0) -
+          (doc && doc.clientTop  || body && body.clientTop  || 0 );
+      }
+	if(is_drawing){
+      var s = document.getElementById("drawing");
+		 // Add a dot to follow the cursor
+      dot = document.createElement('div');
+      dot.className = "dot";
+      dot.style.left = event.pageX + "px";
+      dot.style.top = event.pageY + "px";
+	  dot.style.backgroundColor = now_color;
+      //document.body.appendChild(dot);
+	  s.appendChild(dot);
+	}
+     
+    }
+</script>
+</body>
+</html>

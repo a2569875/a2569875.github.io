@@ -15,8 +15,8 @@ function control_dev(){
 		parent.swal({
 			title: "<h2>"+"控制碼語法說明"+"</h2>",						
 			allowOutsideClick: true,
-			confirmButtonText: "離開",
-			text:"<p style='overflow:auto'><iframe align='center' src='"+"./resources/command"+".html'width='960px' height='600px'frameborder='0' ></iframe></p>",
+			confirmButtonText: "關閉",
+			text:"<p style='overflow:auto'><iframe align='center' src='"+"./resources/command"+".html'width='700px' height='400px'frameborder='0' ></iframe></p>",
 			html:true
 		});
 	}catch(ex){
@@ -24,8 +24,8 @@ function control_dev(){
 			swal({
 				title: "<h2>"+"控制碼語法說明"+"</h2>",						
 				allowOutsideClick: true,
-				confirmButtonText: "離開",
-				text:"<p style='overflow:auto'><iframe align='center' src='"+"./resources/command"+".html'width='960px' height='600px'frameborder='0' ></iframe></p>",
+				confirmButtonText: "關閉",
+				text:"<p style='overflow:auto'><iframe align='center' src='"+"./resources/command"+".html'width='700px' height='400px'frameborder='0' ></iframe></p>",
 				html:true
 			});
 		}catch(ex1){

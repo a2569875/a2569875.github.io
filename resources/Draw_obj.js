@@ -40,6 +40,29 @@ DrawData.prototype.draw = function () {}
 DrawData.prototype.show_message = function () {
 	alert("void shape");
 }
+DrawData.prototype.set_location = function (pt) {}
+DrawData.prototype.move = function (times, route, move_speed) {
+	
+	this.moving_times = times;
+	this.moving_times_max = times;
+	this.moving_route = times;
+	this.moving_route = route;
+	now_run.can_run = false;
+	
+	this.now_moving = setInterval( (function(self) {         //Self-executing func which takes 'this' as self
+         return function() {   //Return a function in the context of 'self'
+			self.moving_times--
+			var tmp_pt = self.moving_route.get_path_at(self.moving_times/self.moving_times_max);
+             self.set_location(tmp_pt); //Thing you wanted to run as non-window 'this'
+			 self.draw();
+			if(self.moving_times<=0){
+				clearInterval(self.now_moving);
+				now_run.can_run = true;
+			}
+         }
+     })(this), move_speed);
+}
+
 //end DrawData
 
 //class CircleData : public DrawData
@@ -60,6 +83,10 @@ CircleData.prototype.draw = function () {
 	this.obj.setAttributeNS (null, "cy",this.y);
 	this.obj.setAttributeNS (null, "r", this.r);
 	this.obj.setAttributeNS (null, "fill", "lightgrey");
+}
+CircleData.prototype.set_location = function (pt) {
+	this.x = pt.x;
+	this.y = pt.y;
 }
 CircleData.prototype.show_message = function () {
 	alert(this.x + ", " + this.y + ", r=" + this.r);
@@ -83,6 +110,15 @@ function CurveData(p1,p2,ctr1,ctr2, box) {
 	this.box = box;
 	this.obj = document.createElementNS(this.xmlns,'path');
 	this.box.appendChild(this.obj);
+}
+CurveData.prototype.set_location = function (pt) {
+	var ctr_1 = this.ctr1.translant(this.p1);
+	var ctr_2 = this.ctr2.translant(this.p1);
+	var end_pt = this.p2.translant(this.p1);
+	this.p2 = pt.add(end_pt);
+	this.ctr1 = pt.add(ctr_1);
+	this.ctr2 = pt.add(ctr_2);
+	this.p1 = pt;
 }
 CurveData.prototype.draw = function () {
 	this.obj.setAttributeNS (null, "d",this.get_d_val());

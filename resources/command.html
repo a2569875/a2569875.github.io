@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Author: 00357123 張宇帆 00357123 沈桓慶  -->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/2000/svg" lang="zh-tw" xml:lang="zh-tw" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<head>
+		<meta charset = "utf-8"/>
+		<link rel=stylesheet type="text/css" href="./cmddoc.css"/>
+	</head>
+	<body>
+		<h3>函式總覽</h3>
+		<table class="overviewSummary" summary="Method Summary table, listing methods, and an explanation" border="0" cellpadding="3" cellspacing="0">
+			<tbody>
+				<tr>
+					<th class="colFirst" scope="col">回傳值類型</th>
+					<th class="colLast" scope="col">函式及說明</th>
+				</tr>
+				<tr class="altColor">
+					<td class="colFirst">
+						<code>火柴人</code>
+					</td>
+					<td class="colLast">
+						<code>
+							<strong>
+								<a href="#define_man">define_man</a>
+							</strong>(整數&nbsp;x座標,&nbsp;整數&nbsp;y座標)
+						</code>
+						<div class="block">
+							產生一個普通的火柴人.
+						</div>
+					</td>
+				</tr>
+				<tr class="rowColor">
+					<td class="colFirst">
+						<code>動作物件</code>
+					</td>
+					<td class="colLast">
+						<code>
+							<strong>
+								<a href="#define_basketball_man">define_basketball_man</a>
+							</strong>(整數&nbsp;x座標,&nbsp;整數&nbsp;y座標)
+						</code>
+						<div class="block">產生一個做投籃動作的火柴人.</div>
+					</td>
+				</tr>
+				<tr class="altColor">
+					<td class="colFirst">
+						<code>動作物件</code>
+					</td>
+					<td class="colLast">
+						<code>
+							<strong>
+								<a href="#define_basketball">define_basketball</a>
+							</strong>(整數&nbsp;x座標,&nbsp;整數&nbsp;y座標,&nbsp;浮點數&nbsp;大小)
+						</code>
+						<div class="block">產生一個籃球物件.</div>
+					</td>
+				</tr>
+				<tr class="rowColor">
+					<td class="colFirst">
+						<code>動作物件</code>
+					</td>
+					<td class="colLast">
+						<code>
+							<strong>
+								<a href="#define_cut_jibanyan">define_cut_jibanyan</a>
+							</strong>(整數&nbsp;x座標,&nbsp;整數&nbsp;y座標)
+						</code>
+						<div class="block">切碎某種物件，血腥--，無言++</div>
+					</td>
+				</tr>
+				<tr class="altColor">
+					<td class="colFirst">
+						<code>形狀物件</code>
+					</td>
+					<td class="colLast">
+						<code>
+							<strong>
+								<a href="#define_curve">define_curve</a>
+							</strong>(座標&nbsp;起始點,&nbsp;座標&nbsp;終點,&nbsp;座標&nbsp;控制點1,&nbsp;座標&nbsp;控制點2)
+						</code>
+						<div class="block">定義一個由2個控制點構成的曲線</div>
+					</td>
+				</tr>
+				<tr class="rowColor">
+					<td class="colFirst">
+						<code>路線</code>
+					</td>
+					<td class="colLast">
+						<code>
+							<strong>
+								<a href="#define_road">define_road</a>
+							</strong>(&nbsp;[座標&nbsp;起始點,&nbsp;座標&nbsp;經過的點1,&nbsp;座標&nbsp;經過的點2,&nbsp;...&nbsp;,座標&nbsp;終點]&nbsp;)
+						</code>
+						<div class="block">產生一個可供其他物件移動的路線</div>
+					</td>
+				</tr>
+				<tr class="altColor">
+					<td class="colFirst"><code>座標</code></td>
+					<td class="colLast"><code><strong><a href="#P()">P</a></strong>(數字&nbsp;x座標,&nbsp;數字&nbsp;y座標)</code>
+						<div class="block">初始化一個<strong>座標</strong>物件.</div>
+					</td>
+				</tr>
+				<tr class="altColor">
+					<td class="colFirst"><code>void</code></td>
+					<td class="colLast"><code><strong><a href="#walk()">walk</a></strong>(火柴人&nbsp;要走路的人,&nbsp;路線&nbsp;要移動的路線)</code>
+						<div class="block">讓火柴人遵照指令路線行走</div>
+					</td>
+				</tr>
+				<tr class="altColor">
+					<td class="colFirst"><code>void</code></td>
+					<td class="colLast"><code><strong><a href="#物件_move">物件.move</a></strong>(整數&nbsp;步數,&nbsp;路線&nbsp;要移動的路線,&nbsp;整數&nbsp;每步延遲)</code>
+						<div class="block">讓物件在指令路線上移動</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="details">
+			<ul class="blockList">
+				<li class="blockList">
+					<ul class="blockList">
+						<li class="blockList">
+							<a name="method_detail"></a>
+							<h3>Method Detail</h3>
+							<a name="define_man"></a>
+							<ul class="blockList">
+								<li class="blockList">
+									<h4>define_man</h4>
+									<pre>火柴人&nbsp;define_man(整數&nbsp;x座標,&nbsp;整數&nbsp;y座標)</pre>
+									<div class="block">產生一個普通的火柴人.</div>
+									<dl>
+										<dt>
+											<span class="strong">參數:</span>
+										</dt>
+										<dd>
+											<code>
+												x座標
+											</code>
+											- 火柴人的x座標
+										</dd>
+										<dd>
+											<code>
+												y座標
+											</code>
+											- 火柴人的y座標
+										</dd>
+										<dt>
+											<span class="strong">回傳:</span>
+										</dt>
+										<dd>普通的火柴人</dd>
+									</dl>
+								</li>
+							</ul>
+							<a name="define_basketball_man"></a>
+							<ul class="blockList">
+								<li class="blockList">
+									<h4>define_basketball_man</h4>
+									<pre>動作物件&nbsp;define_basketball_man(整數&nbsp;x座標,&nbsp;整數&nbsp;y座標)</pre>
+									<div class="block">產生一個做投籃動作的火柴人.</div>
+									<dl>
+										<dt>
+											<span class="strong">參數:</span>
+										</dt>
+										<dd>
+											<code>
+												x座標
+											</code>
+											- 火柴人的x座標
+										</dd>
+										<dd>
+											<code>
+												y座標
+											</code>
+											- 火柴人的y座標
+										</dd>
+										<dt>
+											<span class="strong">回傳:</span>
+										</dt>
+										<dd>做投籃動作的火柴人動作物件</dd>
+									</dl>
+								</li>
+							</ul>
+							<a name="define_basketball"></a>
+							<ul class="blockList">
+								<li class="blockList">
+									<h4>define_basketball</h4>
+									<pre>動作物件&nbsp;define_basketball(整數&nbsp;x座標,&nbsp;整數&nbsp;y座標,&nbsp;浮點數&nbsp;大小)</pre>
+									<div class="block">產生一個籃球物件.</div>
+									<dl>
+										<dt>
+											<span class="strong">參數:</span>
+										</dt>
+										<dd>
+											<code>
+												x座標
+											</code>
+											- 籃球初始的x座標
+										</dd>
+										<dd>
+											<code>
+												y座標
+											</code>
+											- 籃球初始的y座標
+										</dd>
+										<dd>
+											<code>
+												大小
+											</code>
+											- 籃球的大小
+										</dd>
+										<dt>
+											<span class="strong">回傳:</span>
+										</dt>
+										<dd>籃球的動作物件</dd>
+									</dl>
+								</li>
+							</ul>
+							<a name="define_cut_jibanyan"></a>
+							<ul class="blockList">
+								<li class="blockList">
+									<h4>define_cut_jibanyan</h4>
+									<pre>動作物件&nbsp;define_cut_jibanyan(整數&nbsp;x座標,&nbsp;整數&nbsp;y座標)</pre>
+									<div class="block">產生一個將吉胖喵碎屍四段的動作物件(含吉胖喵的驚恐表情).</div>
+									<dl>
+										<dt>
+											<span class="strong">參數:</span>
+										</dt>
+										<dd>
+											<code>
+												x座標
+											</code>
+											- 吉胖喵被切碎前的x座標
+										</dd>
+										<dd>
+											<code>
+												y座標
+											</code>
+											- 吉胖喵被切碎前的y座標
+										</dd>
+										<dt>
+											<span class="strong">回傳:</span>
+										</dt>
+										<dd>吉胖喵尚未被切碎的動作物件</dd>
+									</dl>
+								</li>
+							</ul>
+							<a name="define_curve"></a>
+							<ul class="blockList">
+								<li class="blockList">
+									<h4>define_curve</h4>
+									<pre>形狀物件&nbsp;define_curve(座標&nbsp;起始點,&nbsp;座標&nbsp;終點,&nbsp;座標&nbsp;控制點1,&nbsp;座標&nbsp;控制點2)</pre>
+									<div class="block">定義一個由2個控制點構成的曲線</div>
+									<dl>
+										<dt>
+											<span class="strong">參數:</span>
+										</dt>
+										<dd>
+											<code>
+												起始點
+											</code>
+											- 曲線的起始點
+										</dd>
+										<dd>
+											<code>
+												終點
+											</code>
+											- 曲線的終點
+										</dd>
+										<dd>
+											<code>
+												控制點1
+											</code>
+											- 曲線靠起始點的控制點
+										</dd>
+										<dd>
+											<code>
+												控制點2
+											</code>
+											- 曲線靠終點的控制點
+										</dd>
+										<dt>
+											<span class="strong">回傳:</span>
+										</dt>
+										<dd>曲線物件</dd>
+									</dl>
+								</li>
+							</ul>
+							<a name="define_road"></a>
+							<ul class="blockList">
+								<li class="blockList">
+									<h4>define_road</h4>
+									<pre>路線&nbsp;define_road(&nbsp;[座標&nbsp;起始點,&nbsp;座標&nbsp;經過的點1,&nbsp;座標&nbsp;經過的點2,&nbsp;...&nbsp;,座標&nbsp;終點]&nbsp;)</pre>
+									<div class="block">產生一個可供其他物件移動的路線</div>
+									<dl>
+										<dt>
+											<span class="strong">參數:</span>
+										</dt>
+										<dd>
+											<code>
+												起始點
+											</code>
+											- 路線的起始點
+										</dd>
+										<dd>
+											<code>
+												終點
+											</code>
+											- 路線的終點
+										</dd>
+										<dt>
+											<span class="strong">回傳:</span>
+										</dt>
+										<dd>可供其他物件移動的路線物件</dd>
+									</dl>
+								</li>
+							</ul>
+							<a name="P()"></a>
+							<ul class="blockList">
+								<li class="blockList">
+									<h4>P(int x, int y)</h4>
+									<pre>座標&nbsp;P(數字&nbsp;x座標,&nbsp;數字&nbsp;y座標)</pre>
+									<div class="block">初始化一個<strong>座標</strong>物件.</div>
+									<dl>
+										<dt>
+											<span class="strong">參數:</span>
+										</dt>
+										<dd>
+											<code>
+												x座標
+											</code>
+											- 座標的x座標
+										</dd>
+										<dd>
+											<code>
+												y座標
+											</code>
+											- 座標的y座標
+										</dd>
+										<dt>
+											<span class="strong">回傳:</span>
+										</dt>
+										<dd>已經初始化的<strong>座標</strong>物件</dd>
+									</dl>
+								</li>
+							</ul>
+							<a name="walk()"></a>
+							<ul class="blockList">
+								<li class="blockList">
+									<h4>walk</h4>
+									<pre>void&nbsp;walk(火柴人&nbsp;要走路的人,&nbsp;路線&nbsp;要移動的路線)</pre>
+									<div class="block">讓火柴人遵照指令路線行走</div>
+									<dl>
+										<dt>
+											<span class="strong">參數:</span>
+										</dt>
+										<dd>
+											<code>
+												要走路的人
+											</code>
+											- 傳入一個火柴人好讓其走路
+										</dd>
+										<dd>
+											<code>
+												要移動的路線
+											</code>
+											- 要讓火柴人行走的路線
+										</dd>
+									</dl>
+								</li>
+							</ul>
+							<a name="物件_move"></a>
+							<ul class="blockList">
+								<li class="blockList">
+									<h4>物件.move</h4>
+									<pre>void&nbsp;物件::move(整數&nbsp;步數,&nbsp;路線&nbsp;要移動的路線,&nbsp;整數&nbsp;每步延遲)</pre>
+									<div class="block">讓物件在指令路線上移動</div>
+									<dl>
+										<dt>
+											<span class="strong">有時做此函式的物件類別:</span>
+										</dt>
+										<dd><code>火柴人</code></dd>
+										<dd><code>動作物件</code></dd>
+										<dd><code>形狀物件</code></dd>
+										<dt>
+											<span class="strong">參數:</span>
+										</dt>
+										<dd>
+											<code>
+												步數
+											</code>
+											- 移動時的最大步驟數
+										</dd>
+										<dd>
+											<code>
+												要移動的路線
+											</code>
+											- 移動時的移動的路線
+										</dd>
+										<dd>
+											<code>
+												每步延遲
+											</code>
+											- 移動時的每多久要移動到下一個位置，單位為毫秒。
+										</dd>
+									</dl>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>

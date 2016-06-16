@@ -32,6 +32,12 @@
 				width: 50%;
 				background-color: none; 
 			}
+			.tile_img {
+				float: left; 
+				margin-left: 0px;
+				margin-right:-5px;
+				width: 100%;
+			}
 			nav ul	{ 
 				display: none;
 				list-style: none;
@@ -53,6 +59,20 @@
 				background-color: PowderBlue; 
 			}
 			#aside {
-				width: 25%;
+				width: 20%; 
 				height: 100%;
+			}
+			#main_article {
+				width: 60%; 
+				height: 100%;
+			}
+			#main_show {
+				position: absolute;
+				width: 60%;
+				border: none; 
+				height:200%;
+				padding:0; 
+			}
+			.non-floater { 
+				overflow:hidden; 
 			}

@@ -9,6 +9,7 @@ function AnimationData(svg_list, svg_type, speed, box) {
 	this.speed = speed;
 	this.now_frame = 0;
 	this.now_playing = null; 
+	this.item_scale = 0.5;
 	//////////////////////////
 	this.box = box;
 	this.obj = document.createElementNS(this.xmlns,'g');
@@ -16,6 +17,9 @@ function AnimationData(svg_list, svg_type, speed, box) {
 }
 AnimationData.prototype.draw = function () {
 	this.obj.innerHTML = this.svg_list[this.now_frame];
+}
+AnimationData.prototype.set_location = function (pt) {
+	this.obj.setAttributeNS(null,"transform","translate(" + (pt.x) + "," + (pt.y) +") scale(" + this.item_scale +")");
 }
 AnimationData.prototype.play = function (times) {
 	

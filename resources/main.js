@@ -1,7 +1,7 @@
 /**
  * the main ani
- * @author 00357123 ±i¦t¦|
- * @author 00357127 ¨H®Ù¼y
+ * @author 00357123 å¼µå®‡å¸†
+ * @author 00357127 æ²ˆæ¡“æ…¶
  */
 
 var test0, test1,test1_1, test2, testMan;
@@ -10,6 +10,29 @@ var linectr1, linectr2;
 var ani_test;
 var all_obj;
 var walk_speed, walk_speed;
+function control_dev(){
+	try{
+		parent.swal({
+			title: "<h2>"+"æŽ§åˆ¶ç¢¼èªžæ³•èªªæ˜Ž"+"</h2>",						
+			allowOutsideClick: true,
+			confirmButtonText: "é›¢é–‹",
+			text:"<p style='overflow:auto'><iframe align='center' src='"+"./resources/command"+".html'width='960px' height='600px'frameborder='0' ></iframe></p>",
+			html:true
+		});
+	}catch(ex){
+		try{
+			swal({
+				title: "<h2>"+"æŽ§åˆ¶ç¢¼èªžæ³•èªªæ˜Ž"+"</h2>",						
+				allowOutsideClick: true,
+				confirmButtonText: "é›¢é–‹",
+				text:"<p style='overflow:auto'><iframe align='center' src='"+"./resources/command"+".html'width='960px' height='600px'frameborder='0' ></iframe></p>",
+				html:true
+			});
+		}catch(ex1){
+			
+		}
+	}
+}
 function start(){
 	walk_speed = 10;
 	walk_speed_frame = 100;
@@ -21,7 +44,8 @@ function start(){
 	btm = document.getElementById("ani_2_gif");
 	btm.addEventListener( "click", ani_2_gif, false );
 	
-
+	btm = document.getElementById("control_dev");
+	btm.addEventListener( "click", control_dev, false );
 	//test.show_message();
 	//test.draw();
 	
@@ -108,18 +132,18 @@ function circle_test(){
 	test2.draw();
 }
 function curve_test(){
-	//²Ä¤GºÝÂI
+	//ç¬¬äºŒç«¯é»ž
 	var route3 = new Liner_Vector(new Point(45,30),new Point(50,35));
-	//²Ä¤@±±¨îÂI
+	//ç¬¬ä¸€æŽ§åˆ¶é»ž
 	var route = new Liner_Vector(new Point(30,20),new Point(50,20));
-	//²Ä¤G±±¨îÂI
+	//ç¬¬äºŒæŽ§åˆ¶é»ž
 	var route2 = new Liner_Vector(new Point(45,22),new Point(50,30));
 	
-	//²Ä¤GºÝÂI
+	//ç¬¬äºŒç«¯é»ž
 	var route3_1 = new Liner_Vector(new Point(45,30),new Point(50,35));
-	//²Ä¤@±±¨îÂI
+	//ç¬¬ä¸€æŽ§åˆ¶é»ž
 	var route_1 = new Liner_Vector(new Point(30,20),new Point(50,20));
-	//²Ä¤G±±¨îÂI
+	//ç¬¬äºŒæŽ§åˆ¶é»ž
 	var route2_1 = new Liner_Vector(new Point(45,22),new Point(50,30));
 	//	test1 = new CurveData(new Point(10,50), new Point(50,50), new Point(20,20), new Point(15,50),document.getElementById("draw_frame"));
 	test1.p1 = new Point(50,10);//20 60

@@ -5,6 +5,8 @@
 	<head>
 		<meta charset = "utf-8">
 		<link rel=stylesheet type="text/css" href="./style.css"/> 
+		<link rel=stylesheet type="text/css" href="./ani.css"/> 
+		<script type="text/javascript" src = "http://code.jquery.com/jquery-1.7.1.min.js"></script>
 		<script type="text/javascript" src="https://gabelerner.github.io/canvg/rgbcolor.js"></script> 
 		<script type="text/javascript" src="https://gabelerner.github.io/canvg/StackBlur.js"></script>
 		<script type="text/javascript" src="https://gabelerner.github.io/canvg/canvg.js"></script>
@@ -17,42 +19,76 @@
 		<script type="text/javascript" src = "man.js"></script>
 		<script type="text/javascript" src = "ani.js"></script>
 		<script type="text/javascript" src = "control.js"></script>
+		<script type="text/javascript" src = "svgdata.js"></script>
 		<script type="text/javascript" src = "main.js"></script>
+		<script language="Javascript" type="text/javascript" src="./Actionscript/edit_area/edit_area_full.js"></script>
+		<script language="Javascript" type="text/javascript">
+		// initialisation
+		editAreaLoader.init({
+			id: "wpTextbox1"	// id of the textarea to transform		
+			,start_highlight: true	// if start with highlight
+			,allow_resize: "both"
+			,allow_toggle: true
+			,word_wrap: true
+			,language: "zh_tw"
+			,syntax: "js"	
+		});
+		</script>
 	</head>
 	<body>
 		<!-- style="display:none;" -->
 		<div style="position:fixed;top:-500px;left:-500px;"><div id="draw_buffer"></div></div>
-		<div id="display_frame"><svg id="draw_frame" width="500px" height="500px" viewBox="0 0 120 120"></svg></div>
+		<div id="display_frame" style="text-align:center"><svg id="draw_frame" width="500px" height="500px" viewBox="0 0 120 120"></svg></div>
 		<br/>
-		<table width="100%">
-			<thead>
-				<tr>
-					<th>人物控制碼</th>
-					<th>gif輸出結果</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td width="50%"><div style="height: 150px; overflow: scroll; float: left;">
-		<textarea tabindex="1" cols="50%" rows="25" id="wpTextbox1">
-man2 = define_basketball_man(10, 10);
+
+		<form action='' method='post'>	
+			<textarea tabindex="1" rows="10" style="width:100%" id="wpTextbox1" name="test_1">
+//測試範例
+man2 = define_basketball_man(10, 10); //定義man2是一個打籃球人，位於座標10 10
 man2.play(0);
-man1 = define_man(10, 10);
-road1 = define_road([P(10,10),P(20,20),P(50,15),P(10,10)]);
-walk(man1,road1);
-man2.play(1);
+man1 = define_man(10, 10); //定義man1是一個普通火柴人，位於座標10 10
+road1 = define_road([P(10,10),P(20,20),P(50,15),P(10,10)]); //定義road1為移動路徑
+walk(man1,road1); //讓火柴人man1隨著路徑road1走路
+man2.play(1); //man2播放(打籃球動畫)
+bal1 = define_basketball(45, 40, 0.1); //定義bal1為一顆籃球
+bal1.play(5); //播放籃球旋轉動畫
+road1 = define_road([P(10,10),P(35,40)]); //定義road1為移動路徑
+man2.play(1);bal1.move(27, road1, 40); //球沿路徑road1移動
+			</textarea>
+		</form>
+		<div style="text-align:center">  
+			<button  class="res" type="button" 
+			value="控制碼語法說明" style="height: 50px; width: 300px;" id="control_dev" >
+				<span style="font-family: 微軟正黑體; font-size: 20px;">控制碼語法說明</span>
+			</button> 
+		</div> 
+		<br/>
+		<div style="text-align:center">  
+			<button  class="res" type="button" 
+			value="試看" style="height: 100px; width: 300px;" id="ani_preview" >
+				<span style="font-family: 微軟正黑體; font-size: 50px;">試看</span>
+			</button> 
+		</div>  
 		
-		</textarea></div></th>
-					<td width="50%"><div style="width: 100%; height: 150px; overflow: scroll; float: left;"><img id="output_image" alt="gif here"/></div></th>
-				</tr>
-			</tbody>
-		</table>
-		
+		<div style="text-align:center">
+			<button  class="res" type="button" 
+			value="輸出GIF" style="height: 100px; width: 300px;" id="ani_2_gif" >
+				<span style="font-family: 微軟正黑體; font-size: 50px;">輸出GIF</span>
+			</button> 
+		</div> 
 		
 		<br/>
-		<input type="button" value="執行" id="ani_preview" />
-		<input type="button" value="輸出" id="ani_2_gif" />
-		<br/>
-		
+		<div id="the_gif"></div>
+		<div id="gif_show_hide_control" style="display: none; text-align:center">
+			<h1  style="text-align:center; font-family: 微軟正黑體; font-size: 50px;">Gif輸出結果:</h1>
+			<div style="text-align:center">
+					<img id="output_image" alt="gif here"/>
+			</div> 
+		</div>
+		<div id="gif_show_hide_control_doing" style="display: none; text-align:center">
+			<div style="text-align:center">
+				<h2 style="text-align:center; font-family: 微軟正黑體; font-size: 50px;">製作中...</h2>
+			</div>
+		</div>
 	</body>
 </html>

@@ -7,6 +7,11 @@ playable_ani.prototype.execute = function () {
 	now_run = this;
 	this.can_run = true;
 	this.run_at = 0;
+	try{
+		parent.location.assign("#main_show");
+	}catch(ex){
+		
+	}
 	this.program = setInterval( (function(self) {
          return function() {
 			//alert(self.cmd.length);
@@ -21,6 +26,23 @@ playable_ani.prototype.execute = function () {
          }
      })(this), 10);
 }
+function define_cut_jibanyan(x,y){
+	var tmp_test = new AnimationData(cut_jibanyan, "STRING", 100, document.getElementById("draw_frame"));
+	tmp_test.obj.setAttributeNS(null,"transform","translate(" + (-10+x) + "," + (10 + y) +") scale(0.1)");
+	tmp_test.item_scale = 0.1;
+	return tmp_test;
+}
+function define_curve(p_start, p_end, p_ctr1, p_ctr2){
+	var tmp_test = new CurveData(p_start, p_end, p_ctr1, p_ctr2,document.getElementById("draw_frame"));
+	tmp_test.draw();
+	return tmp_test;
+}
+function define_basketball(x,y,scale_){
+	var tmp_test = new AnimationData(ball_turn, "STRING", 100, document.getElementById("draw_frame"));
+	tmp_test.obj.setAttributeNS(null,"transform","translate(" + (-10+x) + "," + (10 + y) +") scale(" + scale_ + ")");
+	tmp_test.item_scale = scale_;
+	return tmp_test;
+}
 var is_output = false;
 playable_ani.prototype.output = function () {
 	document.getElementById("display_frame").innerHTML = "<svg id=\"draw_frame\" width=\"500px\" height=\"500px\"  viewBox=\"0 0 120 120\"></svg>";
@@ -28,6 +50,20 @@ playable_ani.prototype.output = function () {
 	this.can_run = true;
 	this.run_at = 0;
 	start_gif_rander();
+	document.getElementById("gif_show_hide_control").style.display = "none";
+	document.getElementById("gif_show_hide_control_doing").style.display = "inline";
+	try{
+		//parent.document.getElementById("main_show").height=document.body.scrollHeight+10;
+		//setIframeHeight("main_show");
+		document.getElementById("main_show").height=document.body.scrollHeight+10;
+	}catch(ex){
+		
+	}
+	try{
+		parent.location.assign("#the_gif");
+	}catch(ex){
+		
+	}
 	this.program = setInterval( (function(self) {
          return function() {
 			//alert(self.cmd.length);
@@ -62,11 +98,11 @@ function define_road(list){
 	return new RouteData(list,0,document.getElementById("draw_frame"));
 }
 function ani_preview(){
-	var code = new playable_ani(document.getElementById("wpTextbox1").value);
+	var code = new playable_ani(editAreaLoader.getValue("wpTextbox1"));
 	code.execute();
 }
 function ani_2_gif(){
-	var code = new playable_ani(document.getElementById("wpTextbox1").value);
+	var code = new playable_ani(editAreaLoader.getValue("wpTextbox1"));
 	code.output();
 }
 function start_gif_rander(){
@@ -78,6 +114,8 @@ function start_gif_rander(){
 }
 function stop_gif_rander(){
 	grander.get_gif();
+	document.getElementById("gif_show_hide_control").style.display = "inline";
+	document.getElementById("gif_show_hide_control_doing").style.display = "none";
 }
 function walk(man,road){
 

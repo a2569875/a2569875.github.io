@@ -41,6 +41,10 @@ function ManData(x, y, box) {
 	this.obj.appendChild(this.leg[0].obj);
 	this.obj.appendChild(this.leg[1].obj);
 }
+DrawData.prototype.set_location = function (pt) {
+	this.x = pt.x;
+	this.y = pt.y;
+}
 ManData.prototype.getlocation = function () {
 	return new Point(this.x, this.y);
 }

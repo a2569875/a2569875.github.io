@@ -4,30 +4,78 @@
 <html xmlns="http://www.w3.org/2000/svg" lang="zh-tw" xml:lang="zh-tw" xmlns:xlink="http://www.w3.org/1999/xlink">
 	<head>
 		<meta charset = "utf-8">
+		
 		<link rel=stylesheet type="text/css" href="./resources/index.css"/>
+		<link rel=stylesheet type="text/css" href="./resources/sweetalert2.css">
+		<script type="text/javascript" src="./resources/sweetalert.js"></script>
+		<script type="text/javascript">
+			function getDocHeight(doc) {
+    doc = doc || document;
+    // stackoverflow.com/questions/1145850/
+    var body = doc.body, html = doc.documentElement;
+    var height = Math.max( body.scrollHeight, body.offsetHeight, 
+        html.clientHeight, html.scrollHeight, html.offsetHeight );
+    return height;
+}
+
+function setIframeHeight(id) {
+    var ifrm = document.getElementById(id);
+    var doc = ifrm.contentDocument? ifrm.contentDocument: 
+        ifrm.contentWindow.document;
+    ifrm.style.visibility = 'hidden';
+    ifrm.style.height = "10px"; // reset to minimal height ...
+    // IE opt. for bing/msn needs a bit added or scrollbar appears
+    ifrm.style.height = getDocHeight( doc ) + 50 + "px";
+    ifrm.style.visibility = 'visible';
+}
+
+
+window.onload = function() {
+	document.getElementById('main_show').onload = function() { // Adjust the Id accordingly
+		setIframeHeight(this.id);
+	}
+}
+		</script>
 	</head>
 	<body>
-		<header><img width="100%" src="./resources/title.png"></header>
-		<div style="width: 100%;float: left;">
-			<nav class="floated"><img width="100%" src="./resources/about_us.png"/>
-				<ul>
-					<li><a href = "http://www.w3schools.com/js/default.asp" target="_blank">01-01</a></li>
-					<li><a href = "https://developer.mozilla.org/zh-TW/docs/Web/JavaScript" target="_blank">01-02</a></li>
-					<li><a href = "http://www.json.org/js.html" target="_blank">01-03</a></li>
-				</ul>
-			</nav>
-			<nav class="floated"><a href = "./resources/main.htm" target="tre_w"><img width="100%" src="./resources/moviemaker.png"/></a>
-				<ul>
-					<li><a href = "http://jquery.org/" target="_blank">jQuery.org</a></li>
-					<li><a href = "http://jqueryui.com/" target="_blank">jQuery UI</a></li>
-					<li><a href = "http://jsgears.com/thread-63-1-1.html" target="_blank">jQuery Tutorial</a></li>
-				</ul>
-			</nav>
-			<div class="di_line"></div>
-		</div>
-		<div style="width: 100%;float: left;">
-			<div id="aside" class="floated">aside</aside>
-			<div class = "floated" style="width: 75%; height: 100%;"><iframe name ="tre_w" style="position: absolute; border: none; overflow: scroll; height: 100%; left:25%; width: 75%;" src="ex-3-1.html"></iframe></div>
+		
+		<div style="width: 100%;float: left;height: 100%;">
+			<div class = "floated" id="aside">
+				<svg width="10%" viewbox="0 0 10 10">
+				</svg>
+			</div>
+			<div class = "floated" id="main_article">
+					<img class="tile_img" src="./resources/title.png"/>
+					<div class="tile_img">
+						<nav class="floated"><img width="100%" src="./resources/about_us.png"/>
+							<ul>
+								<li><a href = "http://www.w3schools.com/js/default.asp" target="_blank">01-01</a></li>
+								<li><a href = "https://developer.mozilla.org/zh-TW/docs/Web/JavaScript" target="_blank">01-02</a></li>
+								<li><a href = "http://www.json.org/js.html" target="_blank">01-03</a></li>
+							</ul>
+						</nav>
+						<nav class="floated"><a href = "./resources/main.htm" target="tre_w"><img width="100%" src="./resources/moviemaker.png"/></a>
+							<ul>
+								<li><a href = "./resources/main.htm" target="tre_w">開始製作火柴人動畫</a></li>
+								<li><a href = "http://jqueryui.com/" target="tre_w">jQuery UI</a></li>
+								<li><a href = "./resources/Actionscript/index/rubik.html" target="tre_w">試試魔術方塊</a></li>
+							</ul>
+						</nav>
+						<div class="di_line"></div>
+					</div>
+					<div class="tile_img">
+						<div class="non-floater">
+							<iframe id="main_show" name ="tre_w" src="./resources/Actionscript/index/main.htm">
+								您的瀏覽器過舊無法支援本程式
+							</iframe>
+						</div>
+					</div>
+			</div>
+			<div class = "floated" id="aside">
+				<svg width="10%" viewbox="0 0 10 10">
+				</svg>
+			</div>
+			<div class = "floated" id="page_tail"></div>
 		</div>
 	</body>
 </html>

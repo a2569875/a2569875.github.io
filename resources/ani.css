@@ -1,0 +1,28 @@
+.svg_ani {
+  width: 180px;
+  height: 180px;
+  -webkit-transform: rotate(-91deg);
+  -moz-transform: rotate(-91deg);
+  -o-transform: rotate(-91deg);
+  -ms-transform: rotate(-91deg);
+  transform: rotate(-91deg);
+  -webkit-transform-origin: 50% 50%;
+  -moz-transform-origin: 50% 50%;
+  -o-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+}
+.gauge {
+  stroke: #DFDFDF;
+  stroke-width: 10px;
+  fill: none;
+}
+.arc {
+  stroke: #F1911A;
+  stroke-width: 10px;
+  fill: none;
+  -webkit-transition: stroke-dashoffset 1s linear;
+  -moz-transition: stroke-dashoffset 1s linear;
+  -o-transition: stroke-dashoffset 1s linear;
+  transition: stroke-dashoffset 1s linear;
+}

@@ -7,6 +7,10 @@ playable_ani.prototype.execute = function () {
 	now_run = this;
 	this.can_run = true;
 	this.run_at = 0;
+	document.getElementById("try_see_disable").style.display = "";
+	document.getElementById("try_see_enable").style.display = "none";
+	document.getElementById("output_gif_disable").style.display = "";
+	document.getElementById("output_gif_enable").style.display = "none";
 	/*try{
 		parent.location.assign("#main_show");
 	}catch(ex){
@@ -17,6 +21,10 @@ playable_ani.prototype.execute = function () {
 			//alert(self.cmd.length);
             if(self.run_at > self.cmd.length) {
 				clearInterval(self.program);
+				document.getElementById("try_see_disable").style.display = "none";
+				document.getElementById("try_see_enable").style.display = "";
+				document.getElementById("output_gif_disable").style.display = "none";
+				document.getElementById("output_gif_enable").style.display = "";
 			}else{
 				if(self.can_run){
 					eval(self.cmd[self.run_at]);
@@ -50,8 +58,13 @@ playable_ani.prototype.output = function () {
 	this.can_run = true;
 	this.run_at = 0;
 	start_gif_rander();
+
 	document.getElementById("gif_show_hide_control").style.display = "none";
 	document.getElementById("gif_show_hide_control_doing").style.display = "inline";
+	document.getElementById("try_see_disable").style.display = "";
+	document.getElementById("try_see_enable").style.display = "none";
+	document.getElementById("output_gif_disable").style.display = "";
+	document.getElementById("output_gif_enable").style.display = "none";
 	try{
 		//parent.document.getElementById("main_show").height=document.body.scrollHeight+10;
 		//setIframeHeight("main_show");
@@ -117,6 +130,10 @@ function stop_gif_rander(){
 	grander.get_gif();
 	document.getElementById("gif_show_hide_control").style.display = "inline";
 	document.getElementById("gif_show_hide_control_doing").style.display = "none";
+	document.getElementById("try_see_disable").style.display = "none";
+	document.getElementById("try_see_enable").style.display = "";
+	document.getElementById("output_gif_disable").style.display = "none";
+	document.getElementById("output_gif_enable").style.display = "";
 }
 function walk(man,road){
 

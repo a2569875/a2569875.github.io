@@ -46,36 +46,6 @@ function start(){
 	
 	btm = document.getElementById("control_dev");
 	btm.addEventListener( "click", control_dev, false );
-	//test.show_message();
-	//test.draw();
-	
-	//test0 = new CircleData(10,10,10,document.getElementById("draw_frame"));
-	
-	//test1_1 = new CurveData(new Point(50,10), new Point(50,50), new Point(20,20), new Point(50,15),document.getElementById("draw_frame"));
-	
-	//test1 = new CurveData(new Point(10,50), new Point(50,50), new Point(20,20), new Point(40,80),document.getElementById("draw_frame"));
-	//test1 = new CurveData(new Point(10,50), new Point(50,50), new Point(20,20), new Point(15,50),document.getElementById("draw_frame"));
-	
-	//test2 = new LineData(new Point(0,66),new Point(75,141),1,document.getElementById("draw_frame"));
-	//test2.draw();
-	
-	//testMan = new ManData(50,10,document.getElementById("draw_frame"));
-	
-	//point1 = new CircleData(test1.p1.x,test1.p1.y,1,document.getElementById("draw_frame"));
-	//point2 = new CircleData(test1.p2.x,test1.p2.y,1,document.getElementById("draw_frame"));
-	//pointct1 = new CircleData(test1.ctr1.x,test1.ctr1.y,1,document.getElementById("draw_frame"));
-	//pointct2 = new CircleData(test1.ctr2.x,test1.ctr2.y,1,document.getElementById("draw_frame"));
-	
-	//linectr1 = new LineData(test1.p1,test1.ctr1,0.5,document.getElementById("draw_frame"));
-	//linectr2 = new LineData(test1.p2,test1.ctr2,0.5,document.getElementById("draw_frame"));
-	
-	//r0 = new RouteData([new Point(50,16),new Point(52,11),new Point(103,22),new Point(72,50)],0,document.getElementById("draw_frame"));
-	//r0.draw();
-	
-	//ani_test = new AnimationData(basketball_fake, "STRING", 100, document.getElementById("draw_frame"));
-	//ani_test.obj.setAttributeNS(null,"transform","translate(10,0) scale(0.5)");
-	
-	//testMan.draw();
 }
 var r0;
 function circle_output(){

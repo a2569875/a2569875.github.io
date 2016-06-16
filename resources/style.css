@@ -42,6 +42,12 @@ svg {
 			cursor: pointer; 
 			
 		}
+		.psudores 
+		{
+			background-color: #00468c;
+			border: none;
+			box-shadow: none;
+		}
 		.res:hover{
 			background-color: #bf00ff;
 			position:relative ;
